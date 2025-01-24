@@ -2,7 +2,7 @@
 <html class="wide wow-animation" lang="en">
 
 <head>
-  <title>Contacts</title>
+  <title>Quote</title>
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport"
     content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -99,20 +99,17 @@
                     <li><a class="icon mdi mdi-instagram" href="#"></a></li>
                     <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
                   </ul>
-                  <a href="quote.html">
-                    <button class="btn">Request a quote</button>
-                    </a>
                 </div>
                 <div class="rd-navbar-main">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
                     <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Home</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About us</a>
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="about-us.html">About us</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="products.html">Our Product</a>
                     </li>
-                    <li class="rd-nav-item active"><a class="rd-nav-link" href="contacts.html">Contacts</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
                     </li>
                   </ul>
                 </div>
@@ -211,115 +208,125 @@
         </nav>
       </div>
     </header>
-    <!-- Breadcrumbs -->
-    <section class="bg-gray-7">
-      <div class="breadcrumbs-custom box-transform-wrap context-dark">
-        <div class="container">
-          <h3 class="breadcrumbs-custom-title">Contacts</h3>
-          <div class="breadcrumbs-custom-decor"></div>
+    <div class="wrapper">
+      <form class="form">
+        <span class="title">Enquiry</span>
+    
+        <div class="input-container">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient
+                id="gradient-stroke"
+                x1="0"
+                y1="0"
+                x2="24"
+                y2="24"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0%" stop-color="black"></stop>
+                <stop offset="100%" stop-color="white"></stop>
+              </linearGradient>
+            </defs>
+    
+            <g stroke="url(#gradient-stroke)" fill="none" stroke-width="1">
+              <path d="M21.6365 5H3L12.2275 12.3636L21.6365 5Z"></path>
+              <path d="M16.5 11.5L22.5 6.5V17L16.5 11.5Z"></path>
+              <path d="M8 11.5L2 6.5V17L8 11.5Z"></path>
+              <path
+                d="M9.5 12.5L2.81805 18.5002H21.6362L15 12.5L12 15L9.5 12.5Z"
+              ></path>
+            </g>
+          </svg>
+          <input class="input" type="text" placeholder="Name" />
         </div>
-        <div class="box-transform" style="background-image: url(images/clothing.jpg);"></div>
-      </div>
-      <div class="container">
-        <ul class="breadcrumbs-custom-path">
-          <li><a href="index.html">Home</a></li>
-          <li class="active">Contacts</li>
-        </ul>
-      </div>
-    </section>
-    <!-- Contacts-->
-    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3914.1273603663185!2d77.34719037504775!3d11.178204788996023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDEwJzQxLjUiTiA3N8KwMjAnNTkuMiJF!5e0!3m2!1sen!2sin!4v1736616192240!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <section class="section section-lg bg-default text-md-left">
-      <div class="container">
-        <div class="row row-60 justify-content-center">
-          <div class="col-lg-8">
-            <h4 class="text-spacing-25 text-transform-none">Get in Touch</h4>
-            <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact"
-              method="post" action="bat/rd-mailform.php">
-              <div class="row row-20 gutters-20">
-                <div class="col-md-6">
-                  <div class="form-wrap">
-                    <input class="form-input" id="contact-your-name-5" type="text" name="name"
-                      data-constraints="@Required">
-                    <label class="form-label" for="contact-your-name-5">Your Name*</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-wrap">
-                    <input class="form-input" id="contact-email-5" type="email" name="email"
-                      data-constraints="@Email @Required">
-                    <label class="form-label" for="contact-email-5">Your E-mail*</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-wrap">
-                    <!--Select 2-->
-                    <select class="form-input" data-minimum-results-for-search="Infinity" data-constraints="@Required">
-                      <option value="1">Select a Service</option>
-                      <option value="2">wholesale</option>
-                      <option value="3">Retail</option>
-                      <option value="4">Others</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-wrap">
-                    <input class="form-input" id="contact-phone-5" type="text" name="phone" data-constraints="@Numeric">
-                    <label class="form-label" for="contact-phone-5">Your Phone*</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-wrap">
-                    <label class="form-label" for="contact-message-5">Message</label>
-                    <textarea class="form-input textarea-lg" id="contact-message-5" name="message"
-                      data-constraints="@Required"></textarea>
-                  </div>
-                </div>
-              </div>
-              <button class="button button-secondary button-winona" type="submit">Contact us</button>
-            </form>
-          </div>
-          <div class="col-lg-4">
-            <div class="aside-contacts">
-              <div class="row row-30">
-                <div class="col-sm-6 col-lg-12 aside-contacts-item">
-                  <p class="aside-contacts-title">Get social</p>
-                  <ul class="list-inline contacts-social-list list-inline-sm">
-                    <li><a class="icon mdi mdi-facebook" href="#"></a></li>
-                    <li><a class="icon mdi mdi-twitter" href="#"></a></li>
-                    <li><a class="icon mdi mdi-instagram" href="#"></a></li>
-                    <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
-                  </ul>
-                </div>
-                <div class="col-sm-6 col-lg-12 aside-contacts-item">
-                  <p class="aside-contacts-title">Phone</p>
-                  <div class="unit unit-spacing-xs justify-content-center justify-content-md-start">
-                    <div class="unit-left"><span class="icon mdi mdi-phone"></span></div>
-                    <div class="unit-body"><a class="phone" href="tel:#">+91 7200439935</a></div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-12 aside-contacts-item">
-                  <p class="aside-contacts-title">E-mail</p>
-                  <div class="unit unit-spacing-xs justify-content-center justify-content-md-start">
-                    <div class="unit-left"><span class="icon mdi mdi-email-outline"></span></div>
-                    <div class="unit-body"><a class="mail" href="mailto:#">info@demolink.org</a></div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-12 aside-contacts-item">
-                  <p class="aside-contacts-title">Address</p>
-                  <div class="unit unit-spacing-xs justify-content-center justify-content-md-start">
-                    <div class="unit-left"><span class="icon mdi mdi-map-marker"></span></div>
-                    <div class="unit-body"><a class="address" href="#">Anna Nagar <br
-                          class="d-md-none">Tiruppur, IN, 641602</a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    
+        <div class="input-container">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g stroke="url(#gradient-stroke)" fill="none" stroke-width="1">
+              <path
+                d="M3.5 15.5503L9.20029 9.85L12.3503 13L11.6 13.7503H10.25L9.8 15.1003L8 16.0003L7.55 18.2503L5.5 19.6003H3.5V15.5503Z"
+              ></path>
+              <path d="M16 3.5H11L8.5 6L16 13.5L21 8.5L16 3.5Z"></path>
+              <path d="M16 10.5L18 8.5L15 5.5H13L12 6.5L16 10.5Z"></path>
+            </g>
+          </svg>
+          <input class="input" type="password" placeholder="Email" />
         </div>
-      </div>
-    </section>
-
+        <div class="input-container">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g stroke="url(#gradient-stroke)" fill="none" stroke-width="1">
+              <path
+                d="M3.5 15.5503L9.20029 9.85L12.3503 13L11.6 13.7503H10.25L9.8 15.1003L8 16.0003L7.55 18.2503L5.5 19.6003H3.5V15.5503Z"
+              ></path>
+              <path d="M16 3.5H11L8.5 6L16 13.5L21 8.5L16 3.5Z"></path>
+              <path d="M16 10.5L18 8.5L15 5.5H13L12 6.5L16 10.5Z"></path>
+            </g>
+          </svg>
+          <input class="input" type="password" placeholder="mobile no" />
+        </div>
+        <div class="input-container">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g stroke="url(#gradient-stroke)" fill="none" stroke-width="1">
+              <path
+                d="M3.5 15.5503L9.20029 9.85L12.3503 13L11.6 13.7503H10.25L9.8 15.1003L8 16.0003L7.55 18.2503L5.5 19.6003H3.5V15.5503Z"
+              ></path>
+              <path d="M16 3.5H11L8.5 6L16 13.5L21 8.5L16 3.5Z"></path>
+              <path d="M16 10.5L18 8.5L15 5.5H13L12 6.5L16 10.5Z"></path>
+            </g>
+          </svg>
+          <input class="input" type="password" placeholder="Category" />
+        </div>
+        <div class="input-container">
+          <svg
+            width="24"
+            height="180"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g stroke="url(#gradient-stroke)" fill="none" stroke-width="1">
+              <path
+                d="M3.5 15.5503L9.20029 9.85L12.3503 13L11.6 13.7503H10.25L9.8 15.1003L8 16.0003L7.55 18.2503L5.5 19.6003H3.5V15.5503Z"
+              ></path>
+              <path d="M16 3.5H11L8.5 6L16 13.5L21 8.5L16 3.5Z"></path>
+              <path d="M16 10.5L18 8.5L15 5.5H13L12 6.5L16 10.5Z"></path>
+            </g>
+          </svg>
+          <input class="input" type="message" placeholder="Mention Your Requirements" />
+        </div>
+    
+    
+        <div class="login-button">
+          <input class="input" type="submit" value="Submit" />
+        </div>
+    
+        <div class="texture"></div>
+      </form>
+    </div>
     <!-- Page Footer-->
     <footer class="section footer-modern context-dark footer-modern-2">
       <div class="footer-modern-line">
