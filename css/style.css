@@ -198,6 +198,7 @@ h3,
 	.heading-3 {
 		font-size: 34px;
 	}
+
 }
 
 @media (min-width: 992px) {
@@ -572,6 +573,7 @@ a[href*='tel'], a[href*='mailto'] {
 		font-size: 40px;
 		line-height: 90px;
 	}
+	
 }
 
 @media (min-width: 1200px) {
@@ -2406,6 +2408,7 @@ textarea.form-input {
 	#form-output-global {
 		left: 30px;
 	}
+	
 }
 
 .form-output {
@@ -3185,6 +3188,7 @@ p + .quote-classic {
 * + .quote-tara-status {
 	margin-top: 5px;
 }
+
 
 @media (min-width: 992px) {
 	.desktop .quote-tara-caption,
@@ -8659,7 +8663,9 @@ html.rd-navbar-fixed-linked .page {
 }
 
 .rd-navbar-modern.rd-navbar-fixed .rd-navbar-aside {
-	padding: 30px 30px 0;
+	position: fixed;
+	margin: 25rem 20px 0;
+
 }
 
 .rd-navbar-modern.rd-navbar-fixed .rd-navbar-project-hamburger-open {
@@ -8682,14 +8688,14 @@ html.rd-navbar-fixed-linked .page {
 }
 
 .rd-navbar-modern.rd-navbar-fixed * + .list-share-2 {
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 .list-share-2 {
 	text-align: center;
 	font-size: 0;
 	line-height: 0;
-	margin-bottom: -14px;
+	margin-bottom: -1px;
 	margin-left: -9px;
 }
 
@@ -8703,6 +8709,7 @@ html.rd-navbar-fixed-linked .page {
 	margin-top: 0;
 	margin-bottom: 14px;
 	margin-left: 9px;
+	
 }
 
 .list-share-2 .icon {
