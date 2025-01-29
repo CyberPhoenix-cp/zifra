@@ -3504,6 +3504,7 @@ p + .quote-classic {
 .breadcrumbs-custom-title {
 	font-weight: 400;
 	font-size: 55px;
+	
 }
 
 .breadcrumbs-custom-decor {
@@ -3518,7 +3519,13 @@ p + .quote-classic {
 	height: 4px;
 	background: rgba(255, 255, 255, 0.6);
 }
-
+.breadcrumbs-custom-decor-k::before {
+	display: inline-block;
+	content: '';
+	width: 52px;
+	height: 4px;
+	background:#333333;
+}
 .breadcrumbs-custom-path {
 	padding: 10px 0;
 	margin-left: -17px;

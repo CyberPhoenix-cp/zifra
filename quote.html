@@ -82,7 +82,7 @@
                     <li>
                       <div class="unit unit-spacing-xs">
                         <div class="unit-left"><span class="icon mdi mdi-phone"></span></div>
-                        <div class="unit-body"><a class="phone" href="tel:#">+91 7200439935</a></div>
+                        <div class="unit-body"><a class="phone" href="tel:+91 7200439935">+91 7200439935</a></div>
                       </div>
                     </li>
                     <li>
@@ -106,6 +106,8 @@
                     <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Home</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="products.html">Our Products</a>
+                    </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="kids.html">Kids</a>
                     </li>
                     <li class="rd-nav-item active"><a class="rd-nav-link" href="about-us.html">About us</a>
                     </li>
@@ -209,9 +211,8 @@
       </div>
     </header>
     <div class="wrapper">
-      <form class="form">
+      <form action="https://api.web3forms.com/submit" class="form" method="POST">
         <span class="title">Enquiry</span>
-    
         <div class="input-container">
           <svg
             width="24"
@@ -240,7 +241,8 @@
                 </svg>
             </g>
           </svg>
-          <input class="input" type="text" placeholder="Name*" required/>
+          <input type="hidden" name="access_key" value="5f08f16b-46a1-4597-8288-309b9271d6c5">
+          <input type="text" name="Name" class="input" placeholder="Name*" required>
         </div>
     
         <div class="input-container">
@@ -274,7 +276,7 @@
             ></path>
           </g>
         </svg>
-          <input class="input" type="email" placeholder="Email*" required/>
+          <input type="email" name="email" class="input" placeholder="Email*" required>
         </div>
         <div class="input-container">
           <svg
@@ -308,8 +310,8 @@
                 
             </g>
           </svg>
-          <input class="input" type="tel" placeholder="mobile no*" required/>
-        </div>
+          <input type="tel" id="mobile" name="mobile" class="input" placeholder="+XX XXXXXXXXXX" pattern="^\+(\d{1,3})\s?(\d{10,14})$" required>
+          </div>
         <div class="input-container">
           <svg
             width="24"
@@ -325,7 +327,7 @@
                
             </g>
           </svg>
-          <input class="input" type="text" placeholder="Category*"required/>
+          <input class="input" type="text" name="Category" placeholder="Category*"required>
         </div>
         <div class="input-container">
           <svg
@@ -340,14 +342,17 @@
                 <path d="M 0 7 L 0 43 L 30 43 L 29.998047 41 L 1.9980469 41 L 1.9980469 38.513672 L 16.654297 26.925781 C 17.873674 27.988298 20.072388 29.905393 20.351562 30.148438 C 22.052632 31.629354 23.852224 32 24.998047 32 C 26.143154 32 27.945225 31.631473 29.646484 30.150391 C 29.925743 29.907274 32.125746 27.990757 33.345703 26.927734 L 41.726562 33.554688 L 49.294922 37.310547 C 49.554922 37.440547 49.785 37.576797 50 37.716797 L 50 7 L 0 7 z M 1.9980469 9 L 48 9 L 48 11.503906 C 47.57938 11.870515 29.811999 27.355848 28.333984 28.642578 C 27.037243 29.771495 25.71494 30 24.998047 30 C 24.28187 30 22.960995 29.769708 21.664062 28.640625 C 20.186048 27.353894 2.4186665 11.868561 1.9980469 11.501953 L 1.9980469 9 z M 1.9980469 14.154297 C 3.7430584 15.675068 9.8791232 21.021713 15.119141 25.587891 L 1.9980469 35.964844 L 1.9980469 14.154297 z M 48 14.15625 L 48 35.964844 L 34.878906 25.591797 C 40.118822 21.025708 46.25486 15.677133 48 14.15625 z M 33.898438 32 C 32.798437 32 32 32.900391 32 33.900391 L 32 48.099609 C 32 49.099609 32.898438 50 33.898438 50 C 33.998438 50 34.198828 50.000391 34.298828 49.900391 L 48.398438 42.900391 C 48.798437 42.700391 49.998047 42.1 49.998047 41 C 49.998047 39.9 48.798437 39.299609 48.398438 39.099609 L 34.298828 32.099609 C 34.198828 31.999609 33.998438 32 33.898438 32 z M 33.998047 34.199219 L 47.599609 41 C 47.699609 41 47.698828 41.099609 47.798828 41.099609 C 47.698828 41.099609 47.699609 41.199219 47.599609 41.199219 L 33.998047 47.900391 L 33.998047 34.199219 z"/>
                 </g>
                 </svg>
-          <input class="input" type="message" placeholder="Message*"required />
+          <textarea name="message" class="input" placeholder="Message*"required ></textarea>
         </div>
     
     
         <div class="login-button">
-          <input class="input" type="submit" value="Submit"/>
+          <button class="input" type="submit">Submit</button>
         </div>
-    
+        <input type="hidden" name="redirect" value="http://127.0.0.1:5501/thankyou.html">
+        <input type="hidden" name="subject" value="New Enquiry from zifra creations Website">
+        <input type="hidden" name="from_name" value="Zifra Quote">
+
         <div class="texture"></div>
       </form>
     </div>
@@ -413,7 +418,7 @@
                       src="images/logo gold.png" alt="" width="198" height="66" /></a></div>
                 <div class="col-md-5 col-xl-6">
                   <div class="iso-1"><span><img src="images/like-icon-58x25.png" alt="" width="58"
-                        height="25" /></span><span class="iso-1-big">9.4k</span></div>
+                        height="25" /></span><span class="iso-1-big">9.8k +</span></div>
                 </div>
               </div>
             </div>
@@ -422,7 +427,7 @@
                 <div class="footer-modern-contacts wow slideInUp">
                   <div class="unit unit-spacing-sm align-items-center">
                     <div class="unit-left"><span class="icon icon-24 mdi mdi-phone"></span></div>
-                    <div class="unit-body"><a class="phone" href="tel:#">+91 7200439935</a></div>
+                    <div class="unit-body"><a class="phone" href="tel:+91 7200439935">+91 7200439935</a></div>
                   </div>
                 </div>
                 <div class="footer-modern-contacts wow slideInDown">
