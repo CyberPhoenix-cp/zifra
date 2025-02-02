@@ -82,7 +82,7 @@
                     <li>
                       <div class="unit unit-spacing-xs">
                         <div class="unit-left"><span class="icon mdi mdi-phone"></span></div>
-                        <div class="unit-body"><a class="phone" href="tel:+91 7200439935">+91 7200439935</a></div>
+                        <div class="unit-body"><a class="phone" href="tel:+917200439935">+91 7200439935</a></div>
                       </div>
                     </li>
                     <li>
@@ -237,10 +237,11 @@
           <div class="col-lg-8">
             <h4 class="text-spacing-25 text-transform-none">Get in Touch</h4>
             <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact"
-              method="post" action="bat/rd-mailform.php">
+              method="post" action="https://api.web3forms.com/submit">
               <div class="row row-20 gutters-20">
                 <div class="col-md-6">
                   <div class="form-wrap">
+                    <input type="hidden" name="access_key" value="e4451a45-6b4b-4eb4-a4f7-087225d66930">
                     <input class="form-input" id="contact-your-name-5" type="text" name="name"
                       data-constraints="@Required">
                     <label class="form-label" for="contact-your-name-5">Your Name*</label>
@@ -256,8 +257,8 @@
                 <div class="col-md-6">
                   <div class="form-wrap">
                     <!--Select 2-->
-                    <select class="form-input" data-minimum-results-for-search="Infinity" data-constraints="@Required">
-                      <option value="1">Select a Service</option>
+                    <select class="form-input" data-minimum-results-for-search="Infinity" name="service"data-constraints="@Required">
+                      <!-- <option value="1">Select a Service</option> -->
                       <option value="2">wholesale</option>
                       <option value="3">Retail</option>
                       <option value="4">Others</option>
