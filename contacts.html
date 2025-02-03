@@ -241,7 +241,7 @@
               <div class="row row-20 gutters-20">
                 <div class="col-md-6">
                   <div class="form-wrap">
-                    <input type="hidden" name="access_key" value="e4451a45-6b4b-4eb4-a4f7-087225d66930">
+                    <input type="hidden" name="access_key" value="5f08f16b-46a1-4597-8288-309b9271d6c5">
                     <input class="form-input" id="contact-your-name-5" type="text" name="name"
                       data-constraints="@Required">
                     <label class="form-label" for="contact-your-name-5">Your Name*</label>
@@ -258,16 +258,17 @@
                   <div class="form-wrap">
                     <!--Select 2-->
                     <select class="form-input" data-minimum-results-for-search="Infinity" name="service"data-constraints="@Required">
-                      <!-- <option value="1">Select a Service</option> -->
-                      <option value="2">wholesale</option>
-                      <option value="3">Retail</option>
-                      <option value="4">Others</option>
+                      <option value="">Select a Service</option>
+                      <option value="wholesale">wholesale</option>
+                      <option value="Retail">Retail</option>
+                      <option value="Custom T-shirts">Custom T-shirts</option>
+                      <option value="Others">Others</option>
                     </select>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-wrap">
-                    <input class="form-input" id="contact-phone-5" type="text" name="phone" data-constraints="@Numeric">
+                    <input class="form-input" id="contact-phone-5" type="text" name="phone" data-constraints="@Numeric @Required">
                     <label class="form-label" for="contact-phone-5">Your Phone*</label>
                   </div>
                 </div>
@@ -280,6 +281,8 @@
                 </div>
               </div>
               <button class="button button-secondary button-winona" type="submit">Contact us</button>
+              <input type="hidden" name="subject" value="New person from zifra creations Website">
+              <input type="hidden" name="from_name" value="Zifra Contact">
             </form>
           </div>
           <div class="col-lg-4">
@@ -438,6 +441,7 @@
   <script src="js/script.js"></script>
   <script src="https://static.elfsight.com/platform/platform.js" async></script>
   <div class="elfsight-app-b4816491-0f19-4e9b-8e70-51318ec3f9a2" data-elfsight-app-lazy></div>
+  <script src="path/to/jquery.min.js"></script>
 </body>
 
 </html>

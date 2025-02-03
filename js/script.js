@@ -3,45 +3,45 @@
 (function () {
 	// Global variables
 	var userAgent = navigator.userAgent.toLowerCase(),
-			initialDate = new Date(),
+		initialDate = new Date(),
 
-			$document = $(document),
-			$window = $(window),
-			$html = $("html"),
-			$body = $("body"),
+		$document = $(document),
+		$window = $(window),
+		$html = $("html"),
+		$body = $("body"),
 
-			isDesktop = $html.hasClass("desktop"),
-			isIE = userAgent.indexOf("msie") !== -1 ? parseInt(userAgent.split("msie")[1], 10) : userAgent.indexOf("trident") !== -1 ? 11 : userAgent.indexOf("edge") !== -1 ? 12 : false,
-			isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
-			windowReady = false,
-			isNoviBuilder = false,
-			loaderTimeoutId,
-			plugins = {
-				bootstrapTooltip: $("[data-toggle='tooltip']"),
-				bootstrapTabs: $(".tabs-custom"),
-				rdNavbar: $(".rd-navbar"),
-				materialParallax: $(".parallax-container"),
-				rdMailForm: $(".rd-mailform"),
-				rdInputLabel: $(".form-label"),
-				regula: $("[data-constraints]"),
-				selectFilter: $("select"),
-				wow: $(".wow"),
-				owl: $(".owl-carousel"),
-				swiper: $(".swiper-slider"),
-				slick: $('.slick-slider'),
-				isotope: $(".isotope"),
-				radio: $("input[type='radio']"),
-				checkbox: $("input[type='checkbox']"),
-				preloader: $(".preloader"),
-				captcha: $('.recaptcha'),
-				scroller: $(".scroll-wrap"),
-				lightGallery:            $( '[data-lightgallery="group"]' ),
-				lightGalleryItem:        $( '[data-lightgallery="item"]' ),
-				lightDynamicGalleryItem: $( '[data-lightgallery="dynamic"]' ),
-				copyrightYear: $(".copyright-year"),
-				buttonWinona: $('.button-winona'),
-				multitoggle: document.querySelectorAll('[data-multitoggle]')
-			};
+		isDesktop = $html.hasClass("desktop"),
+		isIE = userAgent.indexOf("msie") !== -1 ? parseInt(userAgent.split("msie")[1], 10) : userAgent.indexOf("trident") !== -1 ? 11 : userAgent.indexOf("edge") !== -1 ? 12 : false,
+		isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+		windowReady = false,
+		isNoviBuilder = false,
+		loaderTimeoutId,
+		plugins = {
+			bootstrapTooltip: $("[data-toggle='tooltip']"),
+			bootstrapTabs: $(".tabs-custom"),
+			rdNavbar: $(".rd-navbar"),
+			materialParallax: $(".parallax-container"),
+			rdMailForm: $(".rd-mailform"),
+			rdInputLabel: $(".form-label"),
+			regula: $("[data-constraints]"),
+			selectFilter: $("select"),
+			wow: $(".wow"),
+			owl: $(".owl-carousel"),
+			swiper: $(".swiper-slider"),
+			slick: $('.slick-slider'),
+			isotope: $(".isotope"),
+			radio: $("input[type='radio']"),
+			checkbox: $("input[type='checkbox']"),
+			preloader: $(".preloader"),
+			captcha: $('.recaptcha'),
+			scroller: $(".scroll-wrap"),
+			lightGallery: $('[data-lightgallery="group"]'),
+			lightGalleryItem: $('[data-lightgallery="item"]'),
+			lightDynamicGalleryItem: $('[data-lightgallery="dynamic"]'),
+			copyrightYear: $(".copyright-year"),
+			buttonWinona: $('.button-winona'),
+			multitoggle: document.querySelectorAll('[data-multitoggle]')
+		};
 
 	// Initialize scripts that require a loaded page
 	$window.on('load', function () {
@@ -91,7 +91,7 @@
 		 */
 		function getSwiperHeight(object, attr) {
 			var val = object.attr("data-" + attr),
-					dim;
+				dim;
 
 			if (!val) {
 				return undefined;
@@ -121,9 +121,9 @@
 		 */
 		function toggleSwiperInnerVideos(swiper) {
 			var prevSlide = $(swiper.slides[swiper.previousIndex]),
-					nextSlide = $(swiper.slides[swiper.activeIndex]),
-					videos,
-					videoItems = prevSlide.find("video");
+				nextSlide = $(swiper.slides[swiper.activeIndex]),
+				videos,
+				videoItems = prevSlide.find("video");
 
 			for (var i = 0; i < videoItems.length; i++) {
 				videoItems[i].pause();
@@ -141,27 +141,27 @@
 		 */
 		function toggleSwiperCaptionAnimation(swiper) {
 			var prevSlide = $(swiper.container).find("[data-caption-animate]"),
-					nextSlide = $(swiper.slides[swiper.activeIndex]).find("[data-caption-animate]"),
-					delay,
-					duration,
-					nextSlideItem,
-					prevSlideItem;
+				nextSlide = $(swiper.slides[swiper.activeIndex]).find("[data-caption-animate]"),
+				delay,
+				duration,
+				nextSlideItem,
+				prevSlideItem;
 
 			for (var i = 0; i < prevSlide.length; i++) {
 				prevSlideItem = $(prevSlide[i]);
 
 				prevSlideItem.removeClass("animated")
-						.removeClass(prevSlideItem.attr("data-caption-animate"))
-						.addClass("not-animated");
+					.removeClass(prevSlideItem.attr("data-caption-animate"))
+					.addClass("not-animated");
 			}
 
 
 			var tempFunction = function (nextSlideItem, duration) {
 				return function () {
 					nextSlideItem
-							.removeClass("not-animated")
-							.addClass(nextSlideItem.attr("data-caption-animate"))
-							.addClass("animated");
+						.removeClass("not-animated")
+						.addClass(nextSlideItem.attr("data-caption-animate"))
+						.addClass("animated");
 					if (duration) {
 						nextSlideItem.css('animation-duration', duration + 'ms');
 					}
@@ -191,8 +191,8 @@
 		 */
 		function initOwlCarousel(c) {
 			var aliaces = ["-", "-sm-", "-md-", "-lg-", "-xl-", "-xxl-"],
-					values = [0, 576, 768, 992, 1200, 1600],
-					responsive = {};
+				values = [0, 576, 768, 992, 1200, 1600],
+				responsive = {};
 
 			for (var j = 0; j < values.length; j++) {
 				responsive[values[j]] = {};
@@ -213,8 +213,8 @@
 			if (c.attr('data-dots-custom')) {
 				c.on("initialized.owl.carousel", function (event) {
 					var carousel = $(event.currentTarget),
-							customPag = $(carousel.attr("data-dots-custom")),
-							active = 0;
+						customPag = $(carousel.attr("data-dots-custom")),
+						active = 0;
 
 					if (carousel.attr('data-active')) {
 						active = parseInt(carousel.attr('data-active'), 10);
@@ -240,7 +240,7 @@
 			});
 
 			// Create custom Numbering
-			if (typeof(c.attr("data-numbering")) !== 'undefined') {
+			if (typeof (c.attr("data-numbering")) !== 'undefined') {
 				var numberingObject = $(c.attr("data-numbering"));
 
 				c.on('initialized.owl.carousel changed.owl.carousel', function (numberingObject) {
@@ -434,25 +434,25 @@
 
 			if (captchaToken.length === 0) {
 				captcha
-						.siblings('.form-validation')
-						.html('Please, prove that you are not robot.')
-						.addClass('active');
+					.siblings('.form-validation')
+					.html('Please, prove that you are not robot.')
+					.addClass('active');
 				captcha
-						.closest('.form-wrap')
-						.addClass('has-error');
+					.closest('.form-wrap')
+					.addClass('has-error');
 
 				captcha.on('propertychange', function () {
 					var $this = $(this),
-							captchaToken = $this.find('.g-recaptcha-response').val();
+						captchaToken = $this.find('.g-recaptcha-response').val();
 
 					if (captchaToken.length > 0) {
 						$this
-								.closest('.form-wrap')
-								.removeClass('has-error');
+							.closest('.form-wrap')
+							.removeClass('has-error');
 						$this
-								.siblings('.form-validation')
-								.removeClass('active')
-								.html('');
+							.siblings('.form-validation')
+							.removeClass('active')
+							.html('');
 						$this.off('propertychange');
 					}
 				});
@@ -471,15 +471,15 @@
 				var $capthcaItem = $(plugins.captcha[i]);
 
 				grecaptcha.render(
-						$capthcaItem.attr('id'),
-						{
-							sitekey: $capthcaItem.attr('data-sitekey'),
-							size: $capthcaItem.attr('data-size') ? $capthcaItem.attr('data-size') : 'normal',
-							theme: $capthcaItem.attr('data-theme') ? $capthcaItem.attr('data-theme') : 'light',
-							callback: function (e) {
-								$('.recaptcha').trigger('propertychange');
-							}
+					$capthcaItem.attr('id'),
+					{
+						sitekey: $capthcaItem.attr('data-sitekey'),
+						size: $capthcaItem.attr('data-size') ? $capthcaItem.attr('data-size') : 'normal',
+						theme: $capthcaItem.attr('data-theme') ? $capthcaItem.attr('data-theme') : 'light',
+						callback: function (e) {
+							$('.recaptcha').trigger('propertychange');
 						}
+					}
 				);
 				$capthcaItem.after("<span class='form-validation'></span>");
 			}
@@ -493,9 +493,9 @@
 			plugins.bootstrapTooltip.tooltip('dispose');
 
 			if (window.innerWidth < 576) {
-				plugins.bootstrapTooltip.tooltip({placement: 'bottom'});
+				plugins.bootstrapTooltip.tooltip({ placement: 'bottom' });
 			} else {
-				plugins.bootstrapTooltip.tooltip({placement: tooltipPlacement});
+				plugins.bootstrapTooltip.tooltip({ placement: tooltipPlacement });
 			}
 		}
 
@@ -504,17 +504,17 @@
 		 * @param {object} itemsToInit - jQuery object
 		 * @param {string} [addClass] - additional gallery class
 		 */
-		function initLightGallery ( itemsToInit, addClass ) {
-			if ( !isNoviBuilder ) {
-				$( itemsToInit ).lightGallery( {
-					thumbnail: $( itemsToInit ).attr( "data-lg-thumbnail" ) !== "false",
+		function initLightGallery(itemsToInit, addClass) {
+			if (!isNoviBuilder) {
+				$(itemsToInit).lightGallery({
+					thumbnail: $(itemsToInit).attr("data-lg-thumbnail") !== "false",
 					selector: "[data-lightgallery='item']",
-					autoplay: $( itemsToInit ).attr( "data-lg-autoplay" ) === "true",
-					pause: parseInt( $( itemsToInit ).attr( "data-lg-autoplay-delay" ) ) || 5000,
+					autoplay: $(itemsToInit).attr("data-lg-autoplay") === "true",
+					pause: parseInt($(itemsToInit).attr("data-lg-autoplay-delay")) || 5000,
 					addClass: addClass,
-					mode: $( itemsToInit ).attr( "data-lg-animation" ) || "lg-slide",
-					loop: $( itemsToInit ).attr( "data-lg-loop" ) !== "false"
-				} );
+					mode: $(itemsToInit).attr("data-lg-animation") || "lg-slide",
+					loop: $(itemsToInit).attr("data-lg-loop") !== "false"
+				});
 			}
 		}
 
@@ -523,21 +523,21 @@
 		 * @param {object} itemsToInit - jQuery object
 		 * @param {string} [addClass] - additional gallery class
 		 */
-		function initDynamicLightGallery ( itemsToInit, addClass ) {
-			if ( !isNoviBuilder ) {
-				$( itemsToInit ).on( "click", function () {
-					$( itemsToInit ).lightGallery( {
-						thumbnail: $( itemsToInit ).attr( "data-lg-thumbnail" ) !== "false",
+		function initDynamicLightGallery(itemsToInit, addClass) {
+			if (!isNoviBuilder) {
+				$(itemsToInit).on("click", function () {
+					$(itemsToInit).lightGallery({
+						thumbnail: $(itemsToInit).attr("data-lg-thumbnail") !== "false",
 						selector: "[data-lightgallery='item']",
-						autoplay: $( itemsToInit ).attr( "data-lg-autoplay" ) === "true",
-						pause: parseInt( $( itemsToInit ).attr( "data-lg-autoplay-delay" ) ) || 5000,
+						autoplay: $(itemsToInit).attr("data-lg-autoplay") === "true",
+						pause: parseInt($(itemsToInit).attr("data-lg-autoplay-delay")) || 5000,
 						addClass: addClass,
-						mode: $( itemsToInit ).attr( "data-lg-animation" ) || "lg-slide",
-						loop: $( itemsToInit ).attr( "data-lg-loop" ) !== "false",
+						mode: $(itemsToInit).attr("data-lg-animation") || "lg-slide",
+						loop: $(itemsToInit).attr("data-lg-loop") !== "false",
 						dynamic: true,
-						dynamicEl: JSON.parse( $( itemsToInit ).attr( "data-lg-dynamic-elements" ) ) || []
-					} );
-				} );
+						dynamicEl: JSON.parse($(itemsToInit).attr("data-lg-dynamic-elements")) || []
+					});
+				});
 			}
 		}
 
@@ -546,9 +546,9 @@
 		 * @param {object} itemToInit - jQuery object
 		 * @param {string} [addClass] - additional gallery class
 		 */
-		function initLightGalleryItem ( itemToInit, addClass ) {
-			if ( !isNoviBuilder ) {
-				$( itemToInit ).lightGallery( {
+		function initLightGalleryItem(itemToInit, addClass) {
+			if (!isNoviBuilder) {
+				$(itemToInit).lightGallery({
 					selector: "this",
 					addClass: addClass,
 					counter: false,
@@ -562,7 +562,7 @@
 						byline: 0,
 						portrait: 0
 					}
-				} );
+				});
 			}
 		}
 
@@ -584,10 +584,10 @@
 
 			if (isIE < 11) {
 				$.getScript('js/pointer-events.min.js')
-						.done(function () {
-							$html.addClass("ie-10");
-							PointerEventsPolyfill.initialize({});
-						});
+					.done(function () {
+						$html.addClass("ie-10");
+						PointerEventsPolyfill.initialize({});
+					});
 			}
 
 			if (isIE === 11) {
@@ -630,7 +630,7 @@
 					(function (bootstrapTabsItem) {
 						bootstrapTabsItem.on('shown.bs.tab', function (event) {
 							var prevTriggerable = bootstrapTabsItem.find('[data-view-trigger="' + event.relatedTarget.getAttribute('href') + '"]'),
-									triggerable = bootstrapTabsItem.find('[data-view-trigger="' + event.target.getAttribute('href') + '"]');
+								triggerable = bootstrapTabsItem.find('[data-view-trigger="' + event.target.getAttribute('href') + '"]');
 
 							prevTriggerable.removeClass('active');
 							triggerable.addClass('active');
@@ -754,15 +754,15 @@
 			for (var i = 0; i < plugins.swiper.length; i++) {
 				var s = $(plugins.swiper[i]);
 				var pag = s.parent().hasClass('swiper-custom-container') ? s.parent().find(".swiper-pagination") : s.find(".swiper-pagination"),
-						next = s.parent().hasClass('swiper-custom-container') ? s.parent().find(".swiper-button-next") : s.find(".swiper-button-next"),
-						prev = s.parent().hasClass('swiper-custom-container') ? s.parent().find(".swiper-button-prev") : s.find(".swiper-button-prev"),
-						bar = s.find(".swiper-scrollbar"),
-						swiperSlide = s.find(".swiper-slide"),
-						autoplay = false;
+					next = s.parent().hasClass('swiper-custom-container') ? s.parent().find(".swiper-button-next") : s.find(".swiper-button-next"),
+					prev = s.parent().hasClass('swiper-custom-container') ? s.parent().find(".swiper-button-prev") : s.find(".swiper-button-prev"),
+					bar = s.find(".swiper-scrollbar"),
+					swiperSlide = s.find(".swiper-slide"),
+					autoplay = false;
 
 				for (var j = 0; j < swiperSlide.length; j++) {
 					var $this = $(swiperSlide[j]),
-							url;
+						url;
 
 					if (url = $this.attr("data-slide-bg")) {
 						$this.css({
@@ -773,9 +773,9 @@
 				}
 
 				swiperSlide.end()
-						.find("[data-caption-animate]")
-						.addClass("not-animated")
-						.end();
+					.find("[data-caption-animate]")
+					.addClass("not-animated")
+					.end();
 
 				s.swiper({
 					autoplay: s.attr('data-autoplay') ? s.attr('data-autoplay') === "false" ? undefined : s.attr('data-autoplay') : 5000,
@@ -795,11 +795,11 @@
 								return '<span class="' + className + '">' + (index + 1) + '</span>';
 							} else if (pag.attr("data-bullet-custom") === "true") {
 								return '<span class="' + className + '">' +
-										'  <svg width="100%" height="100%" viewbox="0 0 24 24">' +
-										'    <circle class="swiper-bullet-line" cx="12" cy="12" r="10"></circle>' +
-										'    <circle class="swiper-bullet-line-2" cx="12" cy="12" r="10"></circle>' +
-										'  </svg>' +
-										'</span>';
+									'  <svg width="100%" height="100%" viewbox="0 0 24 24">' +
+									'    <circle class="swiper-bullet-line" cx="12" cy="12" r="10"></circle>' +
+									'    <circle class="swiper-bullet-line-2" cx="12" cy="12" r="10"></circle>' +
+									'  </svg>' +
+									'</span>';
 							} else {
 								return '<span class="' + className + '"></span>';
 							}
@@ -825,7 +825,7 @@
 							var $swiper = $(s);
 
 							var swiperCustomIndex = $swiper.find('.swiper-pagination__fraction-index').get(0),
-									swiperCustomCount = $swiper.find('.swiper-pagination__fraction-count').get(0);
+								swiperCustomCount = $swiper.find('.swiper-pagination__fraction-count').get(0);
 
 							if (swiperCustomIndex && swiperCustomCount) {
 								swiperCustomIndex.innerHTML = formatIndex(swiper.realIndex + 1);
@@ -854,23 +854,23 @@
 							}
 							if (swiper.slides[activeSlideIndex - 1].getAttribute("data-slide-title")) {
 								$(swiper.container).find('.swiper-button-next .title')[0].innerHTML = swiper.slides[activeSlideIndex +
-								1].getAttribute("data-slide-title");
+									1].getAttribute("data-slide-title");
 								$(swiper.container).find('.swiper-button-prev .title')[0].innerHTML = swiper.slides[activeSlideIndex -
-								1].getAttribute("data-slide-title");
+									1].getAttribute("data-slide-title");
 							}
 
 							if (swiper.slides[activeSlideIndex - 1].getAttribute("data-slide-subtitle")) {
 								$(swiper.container).find('.swiper-button-prev .subtitle')[0].innerHTML = swiper.slides[activeSlideIndex -
-								1].getAttribute("data-slide-subtitle");
+									1].getAttribute("data-slide-subtitle");
 								$(swiper.container).find('.swiper-button-next .subtitle')[0].innerHTML = swiper.slides[activeSlideIndex +
-								1].getAttribute("data-slide-subtitle");
+									1].getAttribute("data-slide-subtitle");
 							}
 							//Replace btn img
 							if ($(swiper.container).find('.preview__img')[0] !== undefined) {
 								$(swiper.container).find('.swiper-button-prev .preview__img').css("background-image", "url(" +
-										swiper.slides[activeSlideIndex - 1].getAttribute("data-slide-bg") + ")");
+									swiper.slides[activeSlideIndex - 1].getAttribute("data-slide-bg") + ")");
 								$(swiper.container).find('.swiper-button-next .preview__img').css("background-image", "url(" +
-										swiper.slides[activeSlideIndex + 1].getAttribute("data-slide-bg") + ")");
+									swiper.slides[activeSlideIndex + 1].getAttribute("data-slide-bg") + ")");
 							}
 						}
 					}(s))
@@ -879,7 +879,7 @@
 				$window.on("resize", (function (s) {
 					return function () {
 						var mh = getSwiperHeight(s, "min-height"),
-								h = getSwiperHeight(s, "height");
+							h = getSwiperHeight(s, "height");
 						if (h) {
 							s.css("height", mh ? mh > h ? mh : h : h);
 						}
@@ -907,11 +907,11 @@
 			var isogroup = [];
 			for (var i = 0; i < plugins.isotope.length; i++) {
 				var isotopeItem = plugins.isotope[i],
-						isotopeInitAttrs = {
-							itemSelector: '.isotope-item',
-							layoutMode: isotopeItem.getAttribute('data-isotope-layout') ? isotopeItem.getAttribute('data-isotope-layout') : 'masonry',
-							filter: '*'
-						};
+					isotopeInitAttrs = {
+						itemSelector: '.isotope-item',
+						layoutMode: isotopeItem.getAttribute('data-isotope-layout') ? isotopeItem.getAttribute('data-isotope-layout') : 'masonry',
+						filter: '*'
+					};
 
 				var iso = new Isotope(isotopeItem, isotopeInitAttrs);
 				isotopeItem.isotope = iso;
@@ -925,11 +925,11 @@
 				filter.parents(".isotope-filters").find('.active').removeClass("active");
 				filter.addClass("active");
 				var iso = $('.isotope[data-isotope-group="' + this.getAttribute("data-isotope-group") + '"]'),
-						isotopeAttrs = {
-							itemSelector: '.isotope-item',
-							layoutMode: iso.attr('data-isotope-layout') ? iso.attr('data-isotope-layout') : 'masonry',
-							filter: this.getAttribute("data-isotope-filter") === '*' ? '*' : '[data-filter*="' + this.getAttribute("data-isotope-filter") + '"]'
-						};
+					isotopeAttrs = {
+						itemSelector: '.isotope-item',
+						layoutMode: iso.attr('data-isotope-layout') ? iso.attr('data-isotope-layout') : 'masonry',
+						filter: this.getAttribute("data-isotope-filter") === '*' ? '*' : '[data-filter*="' + this.getAttribute("data-isotope-filter") + '"]'
+					};
 
 				iso.isotope(isotopeAttrs);
 			}).eq(0).trigger("click")
@@ -952,158 +952,151 @@
 
 		// RD Mailform
 		if (plugins.rdMailForm.length) {
-			var i, j, k,
-					msg = {
-						'MF000': 'Successfully sent!',
-						'MF001': 'Recipients are not set!',
-						'MF002': 'Form will not work locally!',
-						'MF003': 'Please, define email field in your form!',
-						'MF004': 'Please, define type of your form!',
-						'MF254': 'Something went wrong with PHPMailer!',
-						'MF255': 'Aw, snap! Something went wrong.'
-					};
-
-			for (i = 0; i < plugins.rdMailForm.length; i++) {
-				var $form = $(plugins.rdMailForm[i]),
-						formHasCaptcha = false;
-
-				$form.attr('novalidate', 'novalidate').ajaxForm({
-					data: {
-						"form-type": $form.attr("data-form-type") || "contact",
-						"counter": i
-					},
-					beforeSubmit: function (arr, $form, options) {
-						if (isNoviBuilder)
-							return;
-
-						var form = $(plugins.rdMailForm[this.extraData.counter]),
-								inputs = form.find("[data-constraints]"),
-								output = $("#" + form.attr("data-form-output")),
-								captcha = form.find('.recaptcha'),
-								captchaFlag = true;
-
-						output.removeClass("active error success");
-
-						if (isValidated(inputs, captcha)) {
-
-							// veify reCaptcha
-							if (captcha.length) {
-								var captchaToken = captcha.find('.g-recaptcha-response').val(),
-										captchaMsg = {
-											'CPT001': 'Please, setup you "site key" and "secret key" of reCaptcha',
-											'CPT002': 'Something wrong with google reCaptcha'
-										};
-
-								formHasCaptcha = true;
-
-								$.ajax({
-									method: "POST",
-									url: "bat/reCaptcha.php",
-									data: {'g-recaptcha-response': captchaToken},
-									async: false
-								})
-										.done(function (responceCode) {
-											if (responceCode !== 'CPT000') {
-												if (output.hasClass("snackbars")) {
-													output.html('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + captchaMsg[responceCode] + '</span></p>')
-
-													setTimeout(function () {
-														output.removeClass("active");
-													}, 3500);
-
-													captchaFlag = false;
-												} else {
-													output.html(captchaMsg[responceCode]);
-												}
-
-												output.addClass("active");
-											}
-										});
-							}
-
-							if (!captchaFlag) {
-								return false;
-							}
-
-							form.addClass('form-in-process');
-
-							if (output.hasClass("snackbars")) {
-								output.html('<p><span class="icon text-middle fa fa-circle-o-notch fa-spin icon-xxs"></span><span>Sending</span></p>');
-								output.addClass("active");
-							}
-						} else {
-							return false;
-						}
-					},
-					error: function (result) {
-						if (isNoviBuilder)
-							return;
-
-						var output = $("#" + $(plugins.rdMailForm[this.extraData.counter]).attr("data-form-output")),
-								form = $(plugins.rdMailForm[this.extraData.counter]);
-
-						output.text(msg[result]);
-						form.removeClass('form-in-process');
-
-						if (formHasCaptcha) {
-							grecaptcha.reset();
-						}
-					},
-					success: function (result) {
-						if (isNoviBuilder)
-							return;
-
-						var form = $(plugins.rdMailForm[this.extraData.counter]),
-								output = $("#" + form.attr("data-form-output")),
-								select = form.find('select');
-
-						form
-								.addClass('success')
-								.removeClass('form-in-process');
-
-						if (formHasCaptcha) {
-							grecaptcha.reset();
-						}
-
-						result = result.length === 5 ? result : 'MF255';
-						output.text(msg[result]);
-
-						if (result === "MF000") {
-							if (output.hasClass("snackbars")) {
-								output.html('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + msg[result] + '</span></p>');
-							} else {
-								output.addClass("active success");
-							}
-						} else {
-							if (output.hasClass("snackbars")) {
-								output.html(' <p class="snackbars-left"><span class="icon icon-xxs mdi mdi-alert-outline text-middle"></span><span>' + msg[result] + '</span></p>');
-							} else {
-								output.addClass("active error");
+			// Function to validate a single form
+			function validateForm($form) {
+				var isValid = true;
+				var inputs = $form.find("[data-constraints]");
+				
+				// Clear previous errors
+				$form.find('.form-validation').remove();
+				inputs.removeClass('invalid');
+		
+				inputs.each(function() {
+					var $this = $(this);
+					var value = $this.val();
+					var constraints = $this.attr('data-constraints');
+		
+					if (constraints) {
+						// Required validation
+						if (constraints.indexOf('@Required') !== -1) {
+							if (!value || value.trim() === '') {
+								isValid = false;
+								$this.addClass('invalid');
+								$("<span class='form-validation'>This field is required</span>")
+									.insertAfter($this.closest('.form-wrap'));
 							}
 						}
-
-						form.clearForm();
-
-						if (select.length) {
-							select.select2("val", "");
+		
+						// Email validation
+						if (constraints.indexOf('@Email') !== -1) {
+							var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+							if (value && !emailRegex.test(value)) {
+								isValid = false;
+								$this.addClass('invalid');
+								$("<span class='form-validation'>Please enter a valid email address</span>")
+									.insertAfter($this.closest('.form-wrap'));
+							}
 						}
-
-						form.find('input, textarea').trigger('blur');
-
-						setTimeout(function () {
-							output.removeClass("active error success");
-							form.removeClass('success');
-						}, 3500);
+		
+						// Numeric validation
+						if (constraints.indexOf('@Numeric') !== -1) {
+							var numericRegex = /^[\d\s()+.-]*$/;
+							if (value && !numericRegex.test(value)) {
+								isValid = false;
+								$this.addClass('invalid');
+								$("<span class='form-validation'>Please enter valid numbers only</span>")
+									.insertAfter($this.closest('.form-wrap'));
+							}
+						}
 					}
 				});
+		
+				return isValid;
 			}
-		}
-
-		// lightGallery
-		if (plugins.lightGallery.length) {
-			for (var i = 0; i < plugins.lightGallery.length; i++) {
-				initLightGallery(plugins.lightGallery[i]);
-			}
+		
+			// Handle form submission
+			plugins.rdMailForm.each(function() {
+				var $form = $(this);
+				
+				$form.on('submit', function(e) {
+					e.preventDefault();
+					
+					var $submitButton = $form.find('[type="submit"]');
+					var output = $("#" + $form.attr("data-form-output"));
+					
+					// Clear previous messages
+					output.removeClass("active error success");
+					
+					// Validate form
+					if (validateForm($form)) {
+						// Disable button and show loading state
+						$submitButton.prop('disabled', true);
+						$form.addClass('form-in-process');
+						
+						// Show loading message
+						output.html('<p><span class="icon text-middle fa fa-spinner fa-spin"></span><span> Sending...</span></p>');
+						output.addClass("active");
+		
+						// Create FormData object
+						var formData = new FormData($form[0]);
+		
+						// Submit form to Web3Forms
+						fetch('https://api.web3forms.com/submit', {
+							method: 'POST',
+							body: formData
+						})
+						.then(response => response.json())
+						.then(data => {
+							$submitButton.prop('disabled', false);
+							$form.removeClass('form-in-process');
+		
+							if (data.success) {
+								// Success message
+								output.html('<p><span class="icon text-middle mdi mdi-check"></span><span>Message sent successfully!</span></p>');
+								output.addClass("active success");
+		
+								// Reset form
+								$form.trigger('reset');
+								$form.find('select').val('').trigger('change');
+							} else {
+								throw new Error('Form submission failed');
+							}
+		
+							// Hide message after delay
+							setTimeout(function() {
+								output.removeClass("active success");
+							}, 3500);
+						})
+						.catch(error => {
+							$submitButton.prop('disabled', false);
+							$form.removeClass('form-in-process');
+							
+							output.html('<p><span class="icon text-middle mdi mdi-alert"></span><span>Failed to send message. Please try again.</span></p>');
+							output.addClass("active error");
+							
+							setTimeout(function() {
+								output.removeClass("active error");
+							}, 3500);
+						});
+					}
+				});
+		
+				// Clear validation errors on input
+				$form.on('input change', '[data-constraints]', function() {
+					var $this = $(this);
+					$this.removeClass('invalid');
+					$this.closest('.form-wrap').next('.form-validation').remove();
+				});
+			});
+		
+			// Add validation styles
+			$("<style>")
+				.text(`
+					.invalid {
+						border-color:rgb(255, 52, 52) !important;
+					}
+					.form-validation {
+						color:rgb(255, 46, 46);
+						font-size: 11px;
+						margin-top: 5px;
+						margin-right:5px;
+						display: block;
+					}
+					.form-in-process {
+						opacity: 0.7;
+					}
+				`)
+				.appendTo("head");
 		}
 
 		// lightGallery item
@@ -1147,7 +1140,7 @@
 			} else {
 				for (var i = 0; i < plugins.materialParallax.length; i++) {
 					var parallax = $(plugins.materialParallax[i]),
-							imgPath = parallax.data("parallax-img");
+						imgPath = parallax.data("parallax-img");
 
 					parallax.css({
 						"background-image": 'url(' + imgPath + ')',
@@ -1165,7 +1158,7 @@
 		function initWinonaButtons(buttons) {
 			for (var i = 0; i < buttons.length; i++) {
 				var $button = $(buttons[i]),
-						innerContent = $button.html();
+					innerContent = $button.html();
 
 				$button.html('');
 				$button.append('<div class="content-original">' + innerContent + '</div>');
@@ -1178,7 +1171,7 @@
 			var i;
 			for (i = 0; i < plugins.selectFilter.length; i++) {
 				var select = $(plugins.selectFilter[i]),
-						selectStyle = 'html-' + select.attr('data-style') + '-select';
+					selectStyle = 'html-' + select.attr('data-style') + '-select';
 				$html.addClass(selectStyle);
 
 				select.select2({
@@ -1214,17 +1207,17 @@
 					mobileFirst: true,
 					appendArrows: $slickItem.attr("data-arrows-class") || $slickItem,
 					nextArrow: $slickItem.attr('data-custom-arrows') === "true" ? '<button type="button" class="slick-next">' +
-							'  <svg width="100%" height="100%" viewbox="0 0 78 78">' +
-							'    <circle class="slick-button-line" cx="39" cy="39" r="36"></circle>' +
-							'    <circle class="slick-button-line-2" cx="39" cy="39" r="36"></circle>' +
-							'  </svg>' +
-							'</button>' : '<button type="button" class="slick-next"></button>',
+						'  <svg width="100%" height="100%" viewbox="0 0 78 78">' +
+						'    <circle class="slick-button-line" cx="39" cy="39" r="36"></circle>' +
+						'    <circle class="slick-button-line-2" cx="39" cy="39" r="36"></circle>' +
+						'  </svg>' +
+						'</button>' : '<button type="button" class="slick-next"></button>',
 					prevArrow: $slickItem.attr('data-custom-arrows') === "true" ? '<button type="button" class="slick-prev">' +
-							'  <svg width="100%" height="100%" viewbox="0 0 78 78">' +
-							'    <circle class="slick-button-line" cx="39" cy="39" r="36"></circle>' +
-							'    <circle class="slick-button-line-2" cx="39" cy="39" r="36"></circle>' +
-							'  </svg>' +
-							'</button>' : '<button type="button" class="slick-prev"></button>',
+						'  <svg width="100%" height="100%" viewbox="0 0 78 78">' +
+						'    <circle class="slick-button-line" cx="39" cy="39" r="36"></circle>' +
+						'    <circle class="slick-button-line-2" cx="39" cy="39" r="36"></circle>' +
+						'  </svg>' +
+						'</button>' : '<button type="button" class="slick-prev"></button>',
 					responsive: [
 						{
 							breakpoint: 0,
@@ -1264,21 +1257,21 @@
 					]
 				})
 
-						.on('afterChange', function (event, slick, currentSlide, nextSlide) {
-							var $this = $(this),
-									childCarousel = $this.attr('data-child');
+					.on('afterChange', function (event, slick, currentSlide, nextSlide) {
+						var $this = $(this),
+							childCarousel = $this.attr('data-child');
 
-							if (childCarousel) {
-								$(childCarousel + ' .slick-slide').removeClass('slick-current');
-								$(childCarousel + ' .slick-slide').eq(currentSlide).addClass('slick-current');
-							}
-						});
+						if (childCarousel) {
+							$(childCarousel + ' .slick-slide').removeClass('slick-current');
+							$(childCarousel + ' .slick-slide').eq(currentSlide).addClass('slick-current');
+						}
+					});
 
 				if ($slickItem.attr('data-fraction')) {
 					(function () {
 						var fractionElement = document.querySelectorAll($slickItem.attr('data-fraction'))[0],
-								fractionCurrent = fractionElement.querySelectorAll('.slick-fraction-current')[0],
-								fractionAll = fractionElement.querySelectorAll('.slick-fraction-all')[0];
+							fractionCurrent = fractionElement.querySelectorAll('.slick-fraction-current')[0],
+							fractionAll = fractionElement.querySelectorAll('.slick-fraction-all')[0];
 
 						$slickItem.on('afterChange', function (slick) {
 							fractionCurrent.innerText = leadingZero(this.slick.currentSlide + 1);
