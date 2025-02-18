@@ -987,15 +987,31 @@
 									.insertAfter($this.closest('.form-wrap'));
 							}
 						}
+
+						// mobile
+
+						if (constraints.indexOf('@Mobile') !== -1) {
+							var mobileRegex = /^[6-9]\d{9}$/; // Ensures a 10-digit mobile number starting with 6-9
+						
+							$this.closest('.form-wrap').find('.form-validation').remove(); // Remove existing errors
+						
+							if (!mobileRegex.test(value)) {
+								isValid = false;
+								$this.addClass('invalid');
+								$("<span class='form-validation'>Please enter a valid 10-digit mobile number</span>")
+									.insertAfter($this);
+							}
+						}
+						
 		
 						// Numeric validation
 						if (constraints.indexOf('@Numeric') !== -1) {
-							var numericRegex = /^[\d\s()+.-]*$/;
-							if (value && !numericRegex.test(value)) {
+							var numericRegex = /^[6-9]\d{9}$/;
+							if (!numericRegex.test(value)) {
 								isValid = false;
 								$this.addClass('invalid');
-								$("<span class='form-validation'>Please enter valid numbers only</span>")
-									.insertAfter($this.closest('.form-wrap'));
+								$("<span class='form-validation'>Please enter a valid 10-digit mobile number</span>")
+									.insertAfter($this);
 							}
 						}
 					}
